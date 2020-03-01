@@ -32,6 +32,21 @@ describe('Bowling Game', function () {
       expect(game.score()).toBe(16);
     })
 
+    it('can roll a strike', function(){
+      game.roll(10);
+      game.roll(5);
+      game.roll(3);
+      frame(0, 16);
+      expect(game.score()).toBe(26);
+
+
+    });
+
+    it('can roll the perfect game', function(){
+      frame(10,12);
+      expect(game.score()).toBe(300);
+    })
+
 
 
     var frame = function (pins, rolls) {
